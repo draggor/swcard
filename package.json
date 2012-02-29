@@ -1,6 +1,6 @@
 {
 	"name" : "swcard"
-,	"version" : "0.0.2"
+,	"version" : "0.0.3"
 ,	"main" : "./swcard.js"
 ,	"description" : "A little webapp for dealing with the Savage Worlds initiative system."
 ,	"keywords" : [
