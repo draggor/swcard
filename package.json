@@ -1,32 +1,32 @@
 {
-	'name' : 'swcard'
-,	'version' : '0.0.1'
-,	'main' : './swcard.js'
-,	'description' : 'A little webapp for dealing with the Savage Worlds initiative system.'
-,	'keywords' : [
-		'savage'
-	,	'worlds'
-	,	'init'
-	,	'initiative'
-	,	'game'
-	,	'system'
+	"name" : "swcard"
+,	"version" : "0.0.1"
+,	"main" : "./swcard.js"
+,	"description" : "A little webapp for dealing with the Savage Worlds initiative system."
+,	"keywords" : [
+		"savage"
+	,	"worlds"
+	,	"init"
+	,	"initiative"
+	,	"game"
+	,	"system"
 	]
-,	'homepage' : 'https://github.com/draggor/swcard'
-,	'bugs' : {
-		'url' : 'https://github.com/draggor/swcard/issues'
-	,	'email' : 'draggor@gmail.com'
+,	"homepage" : "https://github.com/draggor/swcard"
+,	"bugs" : {
+		"url" : "https://github.com/draggor/swcard/issues"
+	,	"email" : "draggor@gmail.com"
 	}
-,	'author' : {
-		'name' : 'Draggor'
-	,	'email' : 'draggor@gmail.com'
-	,	'url' : 'https://github.com/draggor'
+,	"author" : {
+		"name" : "Draggor"
+	,	"email" : "draggor@gmail.com"
+	,	"url" : "https://github.com/draggor"
 	}
-,	'repository' : {
-		'type' : 'git'
-	,	'url' : 'git://github.com/draggor/swcard.git'
+,	"repository" : {
+		"type" : "git"
+	,	"url" : "git://github.com/draggor/swcard.git"
 	}
-,	'dependencies' : {
-		'socket.io' : '0.9.x'
+,	"dependencies" : {
+		"socket.io" : "0.9.x"
 	}
-,	'license' : 'GPLv3'
+,	"license" : "GPLv3"
 }

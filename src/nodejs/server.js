@@ -1,8 +1,10 @@
-var	http = require('http'),
-	url = require('url'),
-	fs = require('fs'),
-	io = require('socket.io'),
-	cmd = require('./cmd');
+var	http = require('http')
+,	url = require('url')
+,	fs = require('fs')
+,	io = require('socket.io')
+,	cmd = require('./cmd')
+,	config = require('./config')
+;
 
 var SRC = {
 	html: './src/html/',
