@@ -7,7 +7,7 @@ var COMMANDS = {};
 function calljs(client, msg) {
 	var msg = JSON.stringify(msg);
 	sys.log(msg);
-	client.send(msg);
+	client.emit('msg', msg);
 }
 
 function callalljs(list, msg) {
@@ -15,7 +15,7 @@ function callalljs(list, msg) {
 	sys.log(msg);
 	
 	for(c in list) {
-		list[c].send(msg);
+		list[c].emit('msg', msg);
 	}
 
 //	client.broadcast(msg);

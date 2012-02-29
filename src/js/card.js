@@ -39,22 +39,21 @@ function notify(json) {
 COMMANDS.notify = notify;
 
 function send_message(msg) {
-	socket.send(JSON.stringify(msg));
+	socket.emit('msg', JSON.stringify(msg));
 }
 
 function ev_logon(event) {
 	var	server = $('#server').val(),
 		port = parseInt($('#port').val());
 
-	socket = new io.Socket(server, {rememberTransport: false, port: port});
-	socket.addEvent('message', function(data) {
+	socket = io.connect('http://' + server + ':' + port) //, {rememberTransport: false, port: port});
+	socket.on('msg', function(data) {
 		runCmd(JSON.parse(data));
 	});
-	socket.addEvent('connect', function() {
+	socket.on('connect', function() {
 		alert('connected!');
 		send_message(['logon', {game: $('#gamename').val(), gamepass: $('#gamepass').val(), name: $('#username').val(), namepass: $('#userpass').val()}]);
 	});
-	socket.connect();
 	event.preventDefault();
 }
 

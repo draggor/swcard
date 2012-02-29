@@ -1,8 +1,8 @@
 var	http = require('http'),
 	url = require('url'),
 	fs = require('fs'),
-	io = require('../../lib/Socket.IO-node/'),
-//	io = require('Socket.IO'),
+//	io = require('../../lib/Socket.IO-node/'),
+	io = require('socket.io'),
 	cmd = require('./cmd');
 
 var SRC = {
@@ -66,10 +66,14 @@ exports.startServer = function(port) {
 
 	var socket = io.listen(server);
 
-	socket.on('connection', function(client) {
-		client.toString = function() { return client.sessionId; };
+	socket.configure(function() {
+		socket.set('log level', 1);
+	});
 
-		client.on('message', function(message) {
+	socket.sockets.on('connection', function(client) {
+		client.toString = function() { return client.id; };
+
+		client.on('msg', function(message) {
 			console.log('Socket ' + client + ': ' + message);
 			var json = JSON.parse(message);
 			cmd.dispatch(client, json);
