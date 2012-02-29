@@ -17,8 +17,6 @@ function callalljs(list, msg) {
 	for(c in list) {
 		list[c].emit('msg', msg);
 	}
-
-//	client.broadcast(msg);
 }
 
 function runCmd(client, funcName, args) {

@@ -1,7 +1,6 @@
 var	http = require('http'),
 	url = require('url'),
 	fs = require('fs'),
-//	io = require('../../lib/Socket.IO-node/'),
 	io = require('socket.io'),
 	cmd = require('./cmd');
 
@@ -67,7 +66,7 @@ exports.startServer = function(port) {
 	var socket = io.listen(server);
 
 	socket.configure(function() {
-		socket.set('log level', 1);
+		socket.set('log level', config.loglevel);
 	});
 
 	socket.sockets.on('connection', function(client) {
