@@ -1,18 +1,18 @@
 var	game = require('./game'),
-	sys = require('sys'),
+	util = require('util'),
 	util = require('./util');
 
 var COMMANDS = {};
 
 function calljs(client, msg) {
 	var msg = JSON.stringify(msg);
-	sys.log(msg);
+	util.log(msg);
 	client.emit('msg', msg);
 }
 
 function callalljs(list, msg) {
 	var msg = JSON.stringify(msg);
-	sys.log(msg);
+	util.log(msg);
 	
 	for(c in list) {
 		list[c].emit('msg', msg);
@@ -133,14 +133,14 @@ COMMANDS.draw = function(client, args) {
 		c = g.deck.pop(),
 		n = args.name || p.name;
 
-	sys.log(sys.inspect(g.namesToCards));
+	util.log(util.inspect(g.namesToCards));
 
 	if(!c) {
 		if(g.deck.length > 0) {
 			COMMANDS.draw(client, args);
 		}
 	} else {
-		sys.log('Card: ' + c);
+		util.log('Card: ' + c);
 		g.namesToCards[n].push(c);
 		callalljs(g.clients(), ['create_card', {player: n, id: c}]);
 	}
